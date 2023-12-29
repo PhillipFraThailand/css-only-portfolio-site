@@ -1,0 +1,69 @@
+.home {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+
+.homeContent {
+    flex: 2;
+    max-width: 60rem;
+}
+
+.homeImg {
+    height: 700px;
+    width: 700px;
+    transition: 0.5s;
+}
+
+.homeImg:hover {
+    opacity:0.4
+}
+
+.outlinedText {
+  position: relative;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--main-color);
+  background-image: linear-gradient(var(--main-color), var(--main-color));
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0 100%;
+  animation: reveal 6s linear infinite;
+}
+
+@media (max-width: 1600px){ 
+  .homeImg {
+    scale: 0.9;
+  }
+}
+@media (max-width: 1564px){ 
+  .homeImg {
+    scale: 0.6;
+    flex: 1;
+  }
+}
+
+/* **************************************** */
+/* **************  Keyframes ************** */
+/* **************************************** */
+/* 
+  Moves the backgroudn position from left to right
+  Also changes the from 0-50 and back to 0 to give it the wave effect
+ */
+@keyframes reveal {
+  0% {
+    background-size: 0 100%; /* width is 0% and height is 100% */
+    /* background-position: 0; position to the left */
+  } /* as animation goes from 0% done to 50 % */
+  50% {
+    background-size: 50% 100%; /* width grows to 50% and height stays 100% */
+  }
+  100% {
+    background-size: 0 100%; /* set size back to 0 and keep height of 100%*/
+    background-position: 100%; /* position to the right */
+  }
+}
