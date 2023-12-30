@@ -24,19 +24,19 @@ export const Header: FC = () => {
       <AnimatedWrapper index={0}>
         <h1 className={styles.logo}>phillip.</h1>
       </AnimatedWrapper>
-      <nav className={styles.navbar}>
-        {links.map(({ text, href, active }, index) => (
-          // + 1 to animate logo first
-          <AnimatedWrapper key={`${text}-${index}`} index={index + 1}>
+      <AnimatedWrapper index={1}>
+        <nav className={styles.navbar}>
+          {links.map(({ text, href, active }, index) => (
             <Link
+              key={`${text}-${index}`}
               href={href}
               className={`${styles.a} ${active ? styles.active : undefined}`}
             >
               {text}
             </Link>
-          </AnimatedWrapper>
-        ))}
-      </nav>
+          ))}
+        </nav>
+      </AnimatedWrapper>
     </header>
   );
 };

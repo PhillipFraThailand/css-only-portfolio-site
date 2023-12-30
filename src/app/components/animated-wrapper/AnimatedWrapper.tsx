@@ -1,5 +1,5 @@
 import { CSSProperties, FC, ReactNode } from "react";
-
+import styles from "./animatedWrapper.module.css";
 type AnimatedWrapperProps = {
   index: number;
   children: ReactNode;
@@ -13,7 +13,7 @@ export const AnimatedWrapper: FC<AnimatedWrapperProps> = ({
   const style = { "--i": index + 1 } as CSSProperties; // Cast to avoid ts error.
 
   return (
-    <div className="animate" style={style}>
+    <div className={styles.animate} style={style}>
       {children}
     </div>
   );

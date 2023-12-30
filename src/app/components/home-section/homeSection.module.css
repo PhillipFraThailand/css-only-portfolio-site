@@ -12,8 +12,12 @@
 }
 
 .homeImg {
-    height: 700px;
-    width: 700px;
+    background-color: black;
+    border-radius: 50%;
+    min-height: 450px !important;
+    min-width: 450px !important;
+    max-height: 450px !important;
+    max-width: 450px !important;
     transition: 0.5s;
 }
 

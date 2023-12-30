@@ -4,11 +4,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent;
     /* set vertical padding 2 times root's font size, and horizontal padding 9% of the viewport width */
     padding: 3rem 4%;
     justify-content: space-between;
-    align-items: center;
     z-index: 100;
 }
 
@@ -19,14 +17,18 @@
 }
 
 .navbar {
-    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
 }
 
 .navbar a {
+    margin-inline: 1.5rem;
     font-size: 2rem;
     color: var(--text-color);
-    font-weight: 500;
-    margin-left: 3.5rem;
+    font-weight: 400;
+    /* margin-left: 3.5rem; */
     transition: .3s;
 }
 
