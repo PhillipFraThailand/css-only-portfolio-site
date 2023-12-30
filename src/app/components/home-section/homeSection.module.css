@@ -32,7 +32,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   background-size: 0 100%;
-  animation: reveal 6s linear infinite;
+  animation: reveal 8s linear infinite
 }
 
 @media (max-width: 1600px){ 
@@ -59,11 +59,14 @@
     background-size: 0 100%; /* width is 0% and height is 100% */
     /* background-position: 0; position to the left */
   } /* as animation goes from 0% done to 50 % */
-  50% {
+  20% {
     background-size: 50% 100%; /* width grows to 50% and height stays 100% */
   }
+  80% {
+    background-size: 100% 100%; /* width stays at 50% and height stays 100% */
+  }
   100% {
-    background-size: 0 100%; /* set size back to 0 and keep height of 100%*/
+    background-size: 100% 0%; /* set size back to 0 and keep height of 100%*/
     background-position: 100%; /* position to the right */
   }
 }

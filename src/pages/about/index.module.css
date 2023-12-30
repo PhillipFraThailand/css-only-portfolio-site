@@ -7,15 +7,11 @@
   color: var(--main-color);
 }
 
-/* Workaround to prevent image from changing dimensions */
+/* Using ImportantWorkaround to prevent image from changing dimensions */
 .img {
   scale: 0.8;
   border: .4rem solid var(--main-color);
   border-radius: 50%;
-  max-height: 300px !important;
-  max-width: 300px !important;
-  min-height: 300px !important;
-  min-width: 300px !important;
   background-color: black;
  }
 
