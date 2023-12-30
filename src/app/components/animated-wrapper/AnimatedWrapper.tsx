@@ -1,16 +1,18 @@
 import { CSSProperties, FC, ReactNode } from "react";
 import styles from "./animatedWrapper.module.css";
 type AnimatedWrapperProps = {
-  index: number;
+  animationDelay?: number;
   children: ReactNode;
 };
 
 // Wraps components and adds an animation delay based on the index prop.
 export const AnimatedWrapper: FC<AnimatedWrapperProps> = ({
-  index,
+  animationDelay,
   children,
 }) => {
-  const style = { "--i": index + 1 } as CSSProperties; // Cast to avoid ts error.
+  const style = animationDelay
+    ? ({ "--i": animationDelay + 1 } as CSSProperties) // Cast to avoid ts error.
+    : undefined;
 
   return (
     <div className={styles.animate} style={style}>

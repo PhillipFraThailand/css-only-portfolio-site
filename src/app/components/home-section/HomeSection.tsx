@@ -7,16 +7,12 @@ import Image from "next/image";
 export const HomeSection: FC = () => {
   return (
     <section className={styles.home}>
-      <div className={styles.homeContent}>
-        <AnimatedWrapper index={0}>
+      <AnimatedWrapper>
+        <div className={styles.homeContent}>
           <h1>
             Hi, I&apos;m <span>Phillip Eismark</span>
           </h1>
-        </AnimatedWrapper>
-        <AnimatedWrapper index={1}>
           <h3 className={styles.outlinedText}>Frontend developer</h3>
-        </AnimatedWrapper>
-        <AnimatedWrapper index={2}>
           <p>
             Get help understanding your needs with a free consultation Lorem
             ipsum dolor sit amet consectetur adipisicing elit. Recusandae
@@ -24,8 +20,6 @@ export const HomeSection: FC = () => {
             repellendus assumenda iure veniam. Ratione numquam asperiores
             nostrum libero eveniet?
           </p>
-        </AnimatedWrapper>
-        <AnimatedWrapper index={3}>
           <div className="btnContainer">
             <a className="btn" href="#">
               Hire me
@@ -34,9 +28,9 @@ export const HomeSection: FC = () => {
               Let&apos;s Talk!
             </a>
           </div>
-        </AnimatedWrapper>
-      </div>
-      <AnimatedWrapper index={0}>
+        </div>
+      </AnimatedWrapper>
+      <AnimatedWrapper>
         <Image
           priority={true}
           className={`${styles.homeImg}`}

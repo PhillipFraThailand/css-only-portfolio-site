@@ -21,10 +21,10 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      <AnimatedWrapper index={0}>
+      <AnimatedWrapper>
         <h1 className={styles.logo}>phillip.</h1>
       </AnimatedWrapper>
-      <AnimatedWrapper index={1}>
+      <AnimatedWrapper>
         <nav className={styles.navbar}>
           {links.map(({ text, href, active }, index) => (
             <Link

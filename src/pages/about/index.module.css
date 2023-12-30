@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
  }
 
  .aboutContent h2 {
@@ -29,3 +30,26 @@
   font-size: 2.6rem;
  }
  
+ .btnContainer {
+  position: relative;
+}
+
+.btn {
+  height: 5rem;
+  width: 15rem;
+  background: var(--main-color);
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  color: var(--bg-color);
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn:hover {
+  box-shadow:
+    1px 1px 8px #00abf0
+}

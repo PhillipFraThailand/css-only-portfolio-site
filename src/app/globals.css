@@ -65,9 +65,7 @@ p {
   -webkit-text-stroke: 0.7px var(--main-color);
 }
 
-/* **************************************** */
-/* *********** Animated buttons *********** */
-/* **************************************** */
+
 .btnContainer {
   position: relative;
   display: flex;
