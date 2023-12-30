@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./index.module.css";
+import { AnimatedSpinnerImage } from "@/app/components/animated-spinner-image/AnimatedSpinnerImage";
 
 export default function About() {
   return (
@@ -9,18 +10,7 @@ export default function About() {
         <h1>
           About <span className={styles.highlight}>Me</span>
         </h1>
-        <div>
-          <span className={styles.circleSpinner}>
-            <Image
-              priority={true}
-              className={styles.img}
-              src="/assets/Group 4.png"
-              alt="Image of Phillip Eismark"
-              height={400}
-              width={400}
-            />
-          </span>
-        </div>
+        <AnimatedSpinnerImage height={250} width={250} />
         {/* TODO: edit font */}
         <div className={styles.aboutContent}>
           <h2 className={styles.h2}>Frontend Developer</h2>

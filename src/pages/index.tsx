@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <HomeSection />
-      <div style={{ height: "100vh" }}>spacer</div>
+      <div style={{ height: "100vh" }}>100vh spacer</div>
     </>
   );
 }

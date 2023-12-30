@@ -1,12 +1,11 @@
 import { FC } from "react";
 import styles from "./homeSection.module.css";
-import Image from "next/image";
-import svg from "/public/assets/itemssvg.svg";
+import { AnimatedSpinnerImage } from "../animated-spinner-image/AnimatedSpinnerImage";
 
 export const HomeSection: FC = () => {
   return (
     <section className={styles.home}>
-      <div className={`${styles.homeContent}`}>
+      <div className={styles.homeContent}>
         <h1>
           Hi, I&apos;m <span>Phillip Eismark</span>
         </h1>
@@ -28,14 +27,7 @@ export const HomeSection: FC = () => {
           </a>
         </div>
       </div>
-      <Image
-        priority={true}
-        className={styles.homeImg}
-        src={svg}
-        alt="Icons of a Computer, a Phone, and a Website"
-        height={700}
-        width={700}
-      />
+      <AnimatedSpinnerImage height={350} width={350} />
     </section>
   );
 };

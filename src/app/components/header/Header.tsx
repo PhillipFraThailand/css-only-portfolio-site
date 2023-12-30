@@ -21,13 +21,13 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      <AnimatedWrapper index={1}>
-        <h1 className={styles.logo}>{"phillip."}</h1>
+      <AnimatedWrapper index={0}>
+        <h1 className={styles.logo}>phillip.</h1>
       </AnimatedWrapper>
       <nav className={styles.navbar}>
-        {/* Create links and wrap in AnimatedWrapper component to add animation delay. */}
         {links.map(({ text, href, active }, index) => (
-          <AnimatedWrapper key={`${text}-${index}`} index={index}>
+          // + 1 to animate logo first
+          <AnimatedWrapper key={`${text}-${index}`} index={index + 1}>
             <Link
               href={href}
               className={`${styles.a} ${active ? styles.active : undefined}`}
