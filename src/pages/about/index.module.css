@@ -7,19 +7,16 @@
   color: var(--main-color);
 }
 
-/* Using ImportantWorkaround to prevent image from changing dimensions */
-.img {
-  scale: 0.8;
-  border: .4rem solid var(--main-color);
-  border-radius: 50%;
-  background-color: black;
- }
+.title {
+  padding: 2.5rem;
+}
 
  .aboutContent {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding-top: 2.5rem;
  }
 
  .aboutContent h2 {

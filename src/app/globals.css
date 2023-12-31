@@ -10,9 +10,7 @@
 }
 
 :root {
-  /* --bg-color: #245B8B; Consider palette with #081b29; */
-  /* --bg-color:#108975; Consider palette with #245B8B; */
-  --bg-color: #081b29; /* Consider palette with #245B8B; */
+  --bg-color:black; /* Consider palette with #245B8B; */
   --second-bg-color: #000000; 
   --text-bg-color: #ededed; 
   --main-color: #00abf0;
@@ -33,6 +31,34 @@ section {
   min-height: 100vh; /* Each section should take a full screen */
   padding: 10rem 9% 2rem; /* top 10rem, horizontal 9% of viewport width, bottom 2rem */;
   display: flex;
+}
+
+.outlinedText {
+  position: relative;
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--main-color);
+  background-image: linear-gradient(var(--main-color), var(--main-color));
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0 100%;
+  animation: reveal 8s linear infinite
+}
+
+.outlinedTextOnce {
+  position: relative;
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--main-color);
+  background-image: linear-gradient(var(--main-color), var(--main-color));
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0 100%;
+  animation: reveal 3s linear forwards
 }
 
 /* contains and centers content */
@@ -130,6 +156,27 @@ p {
   color: var(--bg-color)
 }
 
+/* 
+  Moves the backgroudn position from left to right
+  Also changes the from 0-50 and back to 0 to give it the wave effect
+ */
+@keyframes reveal {
+  0% {
+    background-size: 0 100%; /* width is 0% and height is 100% */
+    /* background-position: 0; position to the left */
+  } /* as animation goes from 0% done to 50 % */
+  20% {
+    background-size: 50% 100%; /* width grows to 50% and height stays 100% */
+  }
+  80% {
+    background-size: 100% 100%; /* width stays at 50% and height stays 100% */
+  }
+  100% {
+    background-size: 100% 100%; /* set size back to 0 and keep height of 100%*/
+    background-position: 100%; /* position to the right */
+  }
+}
+
 @media (max-width: 1200px){
   html {
     font-size: 55%;
@@ -140,4 +187,88 @@ p {
     height: 150px;
     width: 150px;
   }
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* Dark mode: background-color: black; */
+    transition: background-color 0.3s;
+}
+
+.background-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.jumbo {
+    position: absolute;
+    inset: -10px;
+    opacity: 0.5;
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #fff 0%,
+        #fff 7%,
+        transparent 10%,
+        transparent 12%,
+        #fff 16%
+    );
+    --stripesDark: repeating-linear-gradient(
+        100deg,
+        #000 0%,
+        #000 7%,
+        transparent 10%,
+        transparent 12%,
+        #000 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(10px) invert(100%);
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .jumbo {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+.dark .jumbo::after {
+    background-image: var(--stripesDark), var(--rainbow);
 }
