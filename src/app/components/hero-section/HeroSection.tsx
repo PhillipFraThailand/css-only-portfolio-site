@@ -1,28 +1,93 @@
 "use client";
-import { FC, useMemo } from "react";
+
+import {
+  FC,
+  useEffect,
+  useMemo,
+  useRef,
+  useLayoutEffect,
+  useState,
+} from "react";
 import styles from "./heroSection.module.css";
 import { AnimatedWrapper } from "../animated-wrapper/AnimatedWrapper";
 import { TypeAnimation } from "react-type-animation";
 import Spline from "@splinetool/react-spline";
-import dynamic from "next/dynamic";
+import { Application, SPEObject } from "@splinetool/runtime";
+import { useGSAP, useGSAPConfig } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+export const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export const HeroSection: FC = () => {
+  const [finishedLoading, setFinishedLoading] = useState(false);
+  const containerRef = useRef(null);
+  const cubeRef = useRef<SPEObject | null>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    console.log("useIsomorphicLayoutEffect", useIsomorphicLayoutEffect);
+    let ctx = gsap.context(() => {
+      if (!cubeRef.current || !finishedLoading) {
+        console.log("undef");
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline();
+
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top 50%",
+        end: "bottom bottom",
+        scrub: true,
+      });
+
+      tl.to(cubeRef.current.position, { x: 500, y: 0 });
+      tl.to(cubeRef.current.scale, { x: 0.5, y: 0.5, z: 0.5 });
+      tl.to(cubeRef.current.rotation, { x: -Math.PI / 14, z: Math.PI / 36 });
+    }, [cubeRef, finishedLoading]);
+
+    return () => ctx.revert();
+  }, [cubeRef.current, finishedLoading]);
+
+  const onLoad = (spline: Application) => {
+    console.log("onLoad");
+    const obj = spline.findObjectByName("Cubes");
+    if (obj) {
+      cubeRef.current = obj;
+      console.log("--->", cubeRef.current, obj);
+    }
+    setFinishedLoading(true);
+  };
+
+  const moveObj = () => {
+    console.log(cubeRef);
+
+    if (cubeRef.current) {
+      cubeRef.current.position.x += 100;
+      cubeRef.current.position.y += 100;
+    }
+  };
+
   const AnimatedCube = useMemo(
     () => (
       <div
         style={{
           position: "absolute",
           height: "100%",
-          width: "120%",
+          width: "100%",
           pointerEvents: "none",
-          zIndex: 1,
+          // zIndex: 1,
         }}
       >
         <Spline
           style={{
-            scale: "0.7",
+            scale: "1",
           }}
           scene="https://prod.spline.design/L5ihqoHiQRDAs2R0/scene.splinecode"
+          onLoad={onLoad}
         />
       </div>
     ),
@@ -51,10 +116,13 @@ export const HeroSection: FC = () => {
   }, []);
 
   return (
-    <section className={styles.home}>
+    <section id="part1" ref={containerRef} className={styles.home}>
       <AnimatedWrapper>
         <div className={styles.homeContent}>
           <h1 className={styles.heroTitle}>
+            <button type="button" onClick={() => moveObj()}>
+              moveObj
+            </button>
             Hi, I&apos;m <span>Phillip Eismark</span>
           </h1>
           {AnimatedText}

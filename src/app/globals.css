@@ -33,7 +33,7 @@ section {
   display: flex;
 }
 
-.outlinedText {
+.outlinedText, .outlinedTextOnce {
   position: relative;
   font-size: 5.2rem;
   font-weight: 700;
@@ -49,16 +49,6 @@ section {
 
 /* Animation that runs just once. Currently unused.*/
 .outlinedTextOnce {
-  position: relative;
-  font-size: 5.2rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 0.7px var(--main-color);
-  background-image: linear-gradient(var(--main-color), var(--main-color));
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-size: 0 100%;
   animation: reveal 3s linear forwards
 }
 

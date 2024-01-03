@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.0.2",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.17",
+    "gsap": "^3.12.4",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
@@ -18,6 +20,7 @@
     "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
