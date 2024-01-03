@@ -35,18 +35,29 @@ export const HeroSection: FC = () => {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      const tl = gsap.timeline();
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 50%",
+            end: "bottom bottom",
+            scrub: true,
+          },
+        })
+        .to(cubeRef.current.rotation, { x: -Math.PI / 14, z: Math.PI / 36 }, 0)
+        .to(cubeRef.current.position, { x: 500, y: 0 })
+        .to(cubeRef.current.scale, { x: 0.5, y: 0.5, z: 0.5 });
 
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top 50%",
-        end: "bottom bottom",
-        scrub: true,
-      });
+      // ScrollTrigger.create({
+      //   trigger: containerRef.current,
+      //   start: "top 50%",
+      //   end: "bottom bottom",
+      //   scrub: true,
+      // });
 
-      tl.to(cubeRef.current.position, { x: 500, y: 0 });
-      tl.to(cubeRef.current.scale, { x: 0.5, y: 0.5, z: 0.5 });
-      tl.to(cubeRef.current.rotation, { x: -Math.PI / 14, z: Math.PI / 36 });
+      // tl.to(cubeRef.current.position, { x: 500, y: 0 });
+      // tl.to(cubeRef.current.scale, { x: 0.5, y: 0.5, z: 0.5 });
+      // tl.to(cubeRef.current.rotation, { x: -Math.PI / 14, z: Math.PI / 36 });
     }, [cubeRef, finishedLoading]);
 
     return () => ctx.revert();
