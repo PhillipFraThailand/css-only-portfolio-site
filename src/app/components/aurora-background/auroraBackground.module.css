@@ -1,0 +1,84 @@
+.aurora {
+    position: absolute;
+    inset: -10px;
+    opacity: 0.5;
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #fff 0%,
+        #fff 7%,
+        transparent 10%,
+        transparent 12%,
+        #fff 16%
+    );
+    --stripesDark: repeating-linear-gradient(
+        100deg,
+        #000 0%,
+        #000 7%,
+        transparent 10%,
+        transparent 12%,
+        #000 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 100%;
+    background-position: 20% 20%, 20% 20%;
+
+    filter: blur(10px) invert(100%);
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.aurora::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: aurora 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .aurora {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+.dark .aurora::after {
+    background-image: var(--stripesDark), var(--rainbow);
+}
+
+@keyframes aurora {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.distStar {
+  width: 1px;
+  height: 1px;
+  background: #00C3FF;
+  position: relative;
+  animation-name: starLuster;
+  animation: starLuster .2s ease infinite alternate;
+  z-index: -1;
+}
+
+@keyframes starLuster {
+  0% {background: #BF00FF;}
+  25% {background: #fff;}
+  50% {background: #BF00FF;}
+  75% {background: #FA4B4B;}
+  100% {background: #001E71;}
+}

@@ -2,8 +2,8 @@
   padding: 1.5rem;
   display: inline-block;
   border-radius: 50%;
-  border-bottom: .1rem solid var(--bg-color);
-  border-top: .1rem solid var(--bg-color);
+  border-bottom: .1rem solid transparent;
+  border-top: .1rem solid transparent;
   border-left: .5rem solid var(--main-color);
   border-right: .5rem solid var(--main-color);
   animation: spinner 16s linear infinite;
@@ -13,8 +13,8 @@
   padding: 2rem;
   display: inline-block;
   border-radius: 50%;
-  border-bottom: 0.1rem solid var(--bg-color);
-  border-top: 0.1rem solid var(--bg-color);
+  border-bottom: 0.1rem solid transparent;
+  border-top: 0.1rem solid transparent;
   border-left: .3rem solid var(--main-color);
   border-right: .3rem solid var(--main-color);
   animation: spinnerReverse 32s linear infinite;
