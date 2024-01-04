@@ -6,6 +6,7 @@ type AuroraBackgroundProps = {
   children: ReactNode;
 };
 
+// todo: add aurora toggle
 export const AuroraBackground: FC<AuroraBackgroundProps> = ({ children }) => {
   const distStarRef = useRef<HTMLDivElement[]>([]);
 
