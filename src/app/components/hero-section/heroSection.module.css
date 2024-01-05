@@ -1,44 +1,10 @@
-.home {
-    border: 1px solid red;
-    /* display: flex; */
-    /* align-items: center; */
-    /* padding: 0 9%; */
-    /* justify-content: space-between; */
-}
-
-.homeContent {
-    max-width: 55rem;
-}
-
 .heroTitle {
     font-size: 5.6rem;
     font-weight: 600;
     line-height: 1.4;
-    background: linear-gradient(to right, #7b92aa, #2e456e);
-    /* animation: shine 5s linear infinite; */
     color: #fff;
-    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 40px #7b92aa;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* background: radial-gradient(circle, rgba(142,45,226,1) 0%, rgba(74,0,224,1) 35%, rgba(0,212,255,1) 100%); */
-    /* background: linear-gradient(to right, rgba(142,45,226,1) 0%, rgba(74,0,224,1) 50%, rgba(0,212,255,1) 100%); */
-    /* background: radial-gradient(circle, rgba(142,45,226,1) 0%, rgba(74,0,224,1) 35%, rgba(0,212,255,1) 70%, rgba(0,0,0,1) 100%); */
-    /* background: linear-gradient(to right, rgba(142,45,226,1) 0%, rgba(142,45,226,1) 50%, rgba(0,212,255,1) 50%, rgba(0,212,255,1) 100%); */
-    /* background: conic-gradient(from 90deg at 50% 50%, rgba(142,45,226,1) 0%, rgba(74,0,224,1) 25%, rgba(0,212,255,1) 50%, rgba(142,45,226,1) 75%, rgba(74,0,224,1) 100%); */
-    /* background: linear-gradient(to right, #000000, #434343, #000000, #434343); */
-    /* background: radial-gradient(circle, #000000, #434343, #000000, #434343); */
-    /* background: linear-gradient(to right, #000000, #0000ff, #000000, #0000ff); */
-    /* background: radial-gradient(circle, #000000, #00ff00, #000000, #00ff00); */
-    /* background: radial-gradient(circle, #000000, #00ff00, #000000, #00ff00); */
-    /* background: radial-gradient(circle, #FFD700, #FF6347, #FFD700, #FF6347); */
-    /* background: linear-gradient(to right, #7FFF00, #00BFFF, #7FFF00, #00BFFF); */
-    /* background: radial-gradient(circle, #7FFF00, #00BFFF, #7FFF00, #00BFFF); */
-    /* box-shadow: 0 0 10px #7b92aa, 0 0 20px #7b92aa, 0 0 30px #7b92aa, 0 0 40px #7b92aa; */
-}
-
-@keyframes shine {
-    to {
-        background-position: 200% center;
-    }
+    /* text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 40px #7b92aa; */
+    /* background-clip: text;
+    -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
 }

@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div style={{ height: "100vh" }}></div>
+      <section style={{ backgroundColor: "red" }}>About</section>
+      <section style={{ backgroundColor: "green" }}>Contact</section>
     </>
   );
 }

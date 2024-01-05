@@ -28,9 +28,9 @@ body {
 }
 
 section {
-  min-height: 100vh; /* Each section should take a full screen */
+  height: 100vh; /* Each section should take a full screen */
   padding: 10rem 9% 2rem; /* top 10rem, horizontal 9% of viewport width, bottom 2rem */;
-  display: flex;
+  /* display: flex; */
 }
 
 .outlinedText, .outlinedTextOnce {
