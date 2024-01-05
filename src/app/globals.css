@@ -10,8 +10,7 @@
 }
 
 :root {
-  --bg-color:black; /* Consider palette with #245B8B; */
-  /* --bg-color:rgb(204, 204, 204); Consider palette with #245B8B; */
+  --bg-color:black;
   --second-bg-color: #000000; 
   --text-bg-color: #ededed; 
   --main-color: #00abf0;
@@ -19,7 +18,6 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
 }
 
 body {
@@ -28,142 +26,12 @@ body {
 }
 
 section {
-  height: 100vh; /* Each section should take a full screen */
-  padding: 10rem 9% 2rem; /* top 10rem, horizontal 9% of viewport width, bottom 2rem */;
-  /* display: flex; */
+  height: 100vh;
+  padding: 10rem 9% 2rem;
 }
 
-.outlinedText, .outlinedTextOnce {
-  position: relative;
-  font-size: 5.2rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 0.7px var(--main-color);
-  background-image: linear-gradient(var(--main-color), var(--main-color));
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-size: 0 100%;
-  animation: reveal 8s linear infinite
-}
-
-/* Animation that runs just once. Currently unused.*/
-.outlinedTextOnce {
-  animation: reveal 3s linear forwards
-}
-
-/* contains and centers content */
-.contentBlock {
-  display: flex;
-  align-items: center; /* center vertically - contentBlocks are contained in sections which has 100vh */
-  padding: 0 9%;
-  justify-content: space-between; /* space between content and image */
-}
-
-.leftContent {
-  max-width: 60rem;
-}
-
-h1 {
-  font-size: 5.6rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
 
 p {
   font-size: 1.6rem;
   margin: 2rem 0 4rem;
-}
-
-.outline {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 0.7px var(--main-color);
-}
-
-
-.btnContainer {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 34rem;
-  height: 5rem;
-}
-
-.btnContainer .btn {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  height: 100%;
-  background: var(--main-color);
-  border: 0.2rem solid var(--main-color);
-  border-radius: 0.8rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: .1rem;
-  color: var(--bg-color);
-  z-index: 1;
-  overflow: hidden;
-}
-
-/* Add pseudo element with darker color, 0 width, to later animate the width for expansion transition */
-.btnContainer .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--bg-color);
-  z-index: -1;
-  transition: 1s;
-}
-
-.btnContainer .btn:hover::before {
-  width: 100%;
-}
-
-.btnContainer .btn:hover {
-  color: var(--main-color);
-  box-shadow:
-    1px 1px 8px #00abf0
-}
-
-/* Apply same logic to the 2nd child found with reverse coloring*/
-.btnContainer .btn:nth-child(2)::before {
-  background: var(--main-color);
-  /* override default color */
-}
-
-.btnContainer .btn:nth-child(2) {
-  background: transparent;
-  color: var(--main-color)
-}
-
-.btnContainer .btn:nth-child(2):hover {
-  color: var(--bg-color)
-}
-
-/* 
-  Moves the backgroudn position from left to right
-  Also changes the from 0-50 and back to 0 to give it the wave effect
- */
-@keyframes reveal {
-  0% {
-    background-size: 0 100%; /* width is 0% and height is 100% */
-    /* background-position: 0; position to the left */
-  } /* as animation goes from 0% done to 50 % */
-  20% {
-    background-size: 50% 100%; /* width grows to 50% and height stays 100% */
-  }
-  80% {
-    background-size: 100% 100%; /* width stays at 50% and height stays 100% */
-  }
-  100% {
-    background-size: 100% 100%; /* set size back to 0 and keep height of 100%*/
-    background-position: 100%; /* position to the right */
-  }
 }

@@ -26,9 +26,7 @@ export const HeroSection: FC = () => {
           <p>
             Get help understanding your needs with a free consultation Lorem
             ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            suscipit consectetur, commodi quo laudantium mollitia, illum, esse
-            repellendus assumenda iure veniam. Ratione numquam asperiores
-            nostrum libero eveniet?
+            suscipit consectetur.
           </p>
         </div>
       </motion.div>
