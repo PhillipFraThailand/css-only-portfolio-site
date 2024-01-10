@@ -12,6 +12,7 @@
     "@gsap/react": "^2.0.2",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.17",
+    "@studio-freight/lenis": "^1.0.33",
     "framer-motion": "^10.17.6",
     "gsap": "^3.12.4",
     "next": "14.0.4",

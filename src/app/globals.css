@@ -31,7 +31,6 @@ section {
   padding: 10rem 9% 2rem;
 }
 
-
 p {
   font-size: 1.6rem;
   margin: 2rem 0 4rem;
@@ -43,4 +42,29 @@ p {
   text-align: center;
   text-shadow: 11px 0px 1.6rem #E5E6E8, 0px 0px 0px #c1c1c1; /* Test 1.1 rem*/
   text-transform: uppercase;
+}
+
+.box {
+  height: 100vh;
+}
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
