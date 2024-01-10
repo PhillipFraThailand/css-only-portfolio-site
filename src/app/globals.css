@@ -6,8 +6,8 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
-  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  font-weight: 900;
 }
 
 :root {
