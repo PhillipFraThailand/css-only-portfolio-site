@@ -1,9 +1,10 @@
 "use client";
 
-import { FC, useMemo, useRef } from "react";
+import { FC, useRef } from "react";
 import styles from "./heroSection.module.css";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "../type-animation/TypeAnimation";
+import { AnimatedCube } from "../animated-cube/AnimatedCube";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 0.25, 1], [0, -distance / 4, -distance]);
@@ -19,9 +20,7 @@ export const HeroSection: FC = () => {
     <section>
       <motion.div ref={ref} style={{ y }} transition={{ duration: 1 }}>
         <div style={{ border: "1px solid red" }}>
-          <h1 className={styles.heroTitle}>
-            Hi, I&apos;m <span>Phillip Eismark</span>
-          </h1>
+          <h1 className={styles.heroTitle}>Phillip Eismark</h1>
           <TypeAnimation />
           <p>
             Get help understanding your needs with a free consultation Lorem
@@ -30,6 +29,7 @@ export const HeroSection: FC = () => {
           </p>
         </div>
       </motion.div>
+      <AnimatedCube />
     </section>
   );
 };

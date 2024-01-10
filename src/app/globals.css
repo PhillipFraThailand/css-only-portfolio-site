@@ -6,11 +6,12 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
-  font-family: system-ui, sans-serif;
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  font-weight: bolder;
 }
 
 :root {
-  --bg-color:black;
+  --bg-color:#E8E9EA;
   --second-bg-color: #000000; 
   --text-bg-color: #ededed; 
   --main-color: #00abf0;
@@ -34,4 +35,12 @@ section {
 p {
   font-size: 1.6rem;
   margin: 2rem 0 4rem;
+}
+
+.name {
+  color: transparent;
+  font-size: 11rem;
+  text-align: center;
+  text-shadow: 11px 0px 1.6rem #E5E6E8, 0px 0px 0px #c1c1c1; /* Test 1.1 rem*/
+  text-transform: uppercase;
 }

@@ -9,10 +9,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <main role="main">
-        <AuroraBackground>
-          <Header />
-          <Component {...pageProps} />
-        </AuroraBackground>
+        {/* <AuroraBackground> */}
+        {/* <Header /> */}
+        <Component {...pageProps} />
+        {/* </AuroraBackground> */}
       </main>
     </>
   );

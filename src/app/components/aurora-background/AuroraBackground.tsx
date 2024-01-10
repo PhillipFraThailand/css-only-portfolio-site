@@ -38,7 +38,7 @@ export const AuroraBackground: FC<AuroraBackgroundProps> = ({ children }) => {
 
   return (
     <div className={`${styles.dark}`}>
-      {/* <div className={styles.aurora} /> */}
+      <div className={styles.aurora} />
       {Array.from({ length: 200 }).map((_, i) => (
         <div
           key={i}
