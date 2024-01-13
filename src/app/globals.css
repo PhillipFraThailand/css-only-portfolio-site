@@ -6,15 +6,35 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
-  font-family: 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Trebuchet MS', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
   font-weight: 900;
 }
 
 :root {
+  /* --bg-color: black; */
   --bg-color:#E8E9EA;
   --second-bg-color: #000000; 
   --text-bg-color: #ededed; 
-  --main-color: #00abf0;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 html {
@@ -36,7 +56,7 @@ p {
   margin: 2rem 0 4rem;
 }
 
-.name {
+.header {
   color: transparent;
   font-size: 11rem;
   text-align: center;
@@ -48,23 +68,40 @@ p {
   height: 100vh;
 }
 
-
-html.lenis {
-  height: auto;
+.scrollIndicator {
+  top: 25vh;
+  height: 80vh;
+  position: absolute;
+  border-radius: 2px;
+  background-color: transparent;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
+.scrollIndicator::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  height: 5px;
+  animation: pulse 3.5s infinite, scroll-down 3.5s infinite;
+  background-color: transparent;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0px rgba(220, 220, 220, 1),  0 0 0px 1px rgba(180, 180, 180, 0);
+  }
+  30% {
+    box-shadow: 0 0 0px 0px rgba(200, 200, 200, 1), 0 0 2px 1.5px rgba(180, 180, 180, 1);
+  }
+  100% {
+  box-shadow: 0 0 0px rgba(220, 220, 220,0.3), 0 0 0px 1px rgba(180, 180, 180, 0)
+  }
 }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+@keyframes scroll-down {
+  0% {
+    top: 0
+    }
+    100% {
+      top: 100%
+    }
 }
